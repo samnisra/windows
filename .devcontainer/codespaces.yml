@@ -3,7 +3,7 @@ services:
     container_name: windows
     image: ghcr.io/dockur/windows
     environment:
-      RAM_SIZE: "half"
+      RAM_SIZE: "max"
       DISK_SIZE: "max"
       CPU_CORES: "max"
     devices:
@@ -17,5 +17,5 @@ services:
       - 3389:3389/udp
     volumes:
       - ./windows:/storage
-    restart: on-failure
+    restart: always
     stop_grace_period: 2m
